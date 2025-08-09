@@ -88,32 +88,32 @@ public class Answer
                 => Exam = isFinal ? new FinalExam() : new PracticalExam();
         }
 
-        
-          class Program 
-        { 
-       
-            static void Main()
-            {
-                var subj = new Subject(1, "OOP C#");
-                subj.CreateExam(isFinal: true);
 
-                subj.Exam.Time = TimeSpan.FromMinutes(60);
-                subj.Exam.Questions.Add(new MCQQuestion
-                {
-                    Header = "What is encapsulation?",
-                    Body = "Explain encapsulation in OOP",
-                    Mark = 5,
-                    Answers = {
+class Program
+{
+
+    static void Main()
+    {
+        var subj = new Subject(1, "OOP C#");
+        subj.CreateExam(isFinal: true);
+
+        subj.Exam.Time = TimeSpan.FromMinutes(60);
+        subj.Exam.Questions.Add(new MCQQuestion
+        {
+            Header = "What is encapsulation?",
+            Body = "Explain encapsulation in OOP",
+            Mark = 5,
+            Answers = {
                 new Answer { AnswerId = 1, AnswerText = "Hiding internal details" },
                 new Answer { AnswerId = 2, AnswerText = "Dividing code into methods" }
             },
-                    CorrectAnswer = new Answer { AnswerId = 1, AnswerText = "Hiding internal details" }
-                });
+            CorrectAnswer = new Answer { AnswerId = 1, AnswerText = "Hiding internal details" }
+        });
 
-                subj.Exam.ShowExam();
-                Console.ReadKey();
-            }
-        }
+        subj.Exam.ShowExam();
+        Console.ReadKey();
+    }
+}
 
     
 
